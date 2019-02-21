@@ -1,18 +1,35 @@
-# cash
+# cash library
 
-### Utility
+## Utility
 The library cash is used to convert a value (1 by reference) from US Dollars ($) into Euro (EURO), British Pound Sterling (GBP) and Japanese yen (YEN).
 
-# Install 
+## Install 
 
 ```
 $ npm install i
 ```
 
+## Disclaimer
 
-
+This source and the whole package comes without warranty. It may or may not harm your computer or cell phone. Please use with care. Any damage cannot 
+be related back to the author. The source has been tested on a virtual environment and scanned for viruses and has passed all tests.
 
 ## Usage
+
+- In the cash/bin file, write down the following elements to modify something:
+		$ node index <amount> <from> <to>
+		$ node index <options>
+
+- In constants.js, you can add by default an other value:
+const DEFAULT_TO_CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY'];
+
+## Examples
+
+		$ node index.js 10 usd eur pln
+		$ node index.js --set usd aud
+		& node index.js save usd aud
+
+## Deeper focus on the code
 ```js
 #!/usr/bin/env node
 
@@ -71,5 +88,3 @@ const cash = async command => { //we use an async command to make the function w
 };
 
 module.exports = cash;//exporting the library to use it elsewhere
-
-# Disclaimer
